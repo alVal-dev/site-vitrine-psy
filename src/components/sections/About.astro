@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import { type Locale, t, tArray } from "../../i18n";
+import defaultPortrait from "../../assets/images/portrait-4.png"
+
+interface Props {
+  lang: Locale;
+  image?: ImageMetadata;
+}
+
+const { lang, image = defaultPortrait  } = Astro.props;
+
+const paragraphs = tArray('about.paragraphs', lang);
+const highlight = t('about.highlight', lang);
+---
+
+<section id="qui-suis-je" aria-labelledby="about-title" class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid items-center gap-12 md:grid-cols-2 lg:gap-16">
+      <figure class="order-2 md:order-1">
+        <div class="overflow-hidden rounded-3xl shadow-2xl">
+          <Image
+            src={image}
+            alt={t('about.portraitAlt', lang)}
+            class="h-full w-full object-cover"
+            widths={[480, 768, 1024, 1200]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="lazy"
+            decoding="async"
+            format="webp"
+            quality={85}
+          />
+        </div>
+      </figure>
+
+      <div class="order-1 md:order-2">
+        <h2 id="about-title" class="mb-8 font-serif text-4xl text-gray-800 md:text-5xl">
+          {t('about.title', lang)}
+        </h2>
+        <div class="space-y-6 text-lg leading-relaxed text-justify text-gray-600">
+          {paragraphs.map((text) => <p>{text}</p>)}
+          <p class="font-medium text-gray-800">{highlight}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

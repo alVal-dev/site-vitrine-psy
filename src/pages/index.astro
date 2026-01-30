@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import customImage from '../assets/images/portrait-4.png';
+import Services from '../components/sections/Services.astro';
+import Methodology from '../components/sections/Methodology.astro';
+import { defaultLocale } from '../i18n';
+
+// Page d'accueil par défaut (FR) - pas de préfixe
+const lang = defaultLocale;
+---
+
+<BaseLayout lang={lang}>
+  <Hero lang={lang} />
+  <About lang={lang} image={customImage}/>
+  <Services lang={lang} />
+  <Methodology lang={lang} />
+</BaseLayout>

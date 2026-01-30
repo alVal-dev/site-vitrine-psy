@@ -1,0 +1,147 @@
+{
+  "site": {
+    "title": "Evelin Valcarce - Psicóloga Clínica en Libourne",
+    "description": "Psicóloga clínica y de orientación en Libourne, Francia. Acompañamiento personalizado en francés y español para adolescentes, adultos, parejas y orientación profesional.",
+    "keywords": "psicóloga, Libourne, terapia, pareja, orientación profesional, español, clínica, Francia"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Quién soy",
+    "services": "Mis Servicios",
+    "pricing": "Tarifas",
+    "approach": "Mi enfoque",
+    "contact": "Contacto",
+    "cta": "Pedir cita",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "allServices": "→ Ver todos los servicios"
+  },
+  "hero": {
+    "title": "Psicóloga Clínica &",
+    "titleHighlight": "Psicóloga de Orientación",
+    "subtitle": "Un espacio de escucha benevolente para recuperar su equilibrio personal y profesional.",
+    "cta": "Descubrir mis servicios",
+    "logoAlt": "Logo del consultorio Evelin Valcarce"
+  },
+  "about": {
+    "title": "¿Quién soy?",
+    "portraitAlt": "Retrato de Evelin Valcarce, psicóloga clínica",
+    "paragraphs": [
+      "Como psicóloga clínica, acompaño desde hace más de 13 años a adolescentes, adultos y personas mayores que atraviesan periodos de dificultad o de transición (ansiedad, estrés, agotamiento, baja autoestima, dificultades relacionales, duelo, cambios de vida…).",
+      "Mi práctica se basa en un enfoque integrador: considero a la persona en su conjunto y, según sus necesidades, articulo las dimensiones emocional, cognitiva y conductual (así como su contexto de vida). Me baso especialmente en una postura humanista y en herramientas provenientes de la TCC (terapia cognitivo-conductual), del enfoque psicodinámico y de la atención plena (mindfulness), para ofrecer un seguimiento a la vez personalizado y estructurado, en un marco confidencial y respetuoso.",
+      "También propongo un acompañamiento en orientación escolar y profesional (desde un enfoque psicológico). No se trata de asesoramiento administrativo ni de un balance de competencias: el objetivo es trabajar el autoconocimiento (valores, intereses, modo de funcionamiento) y los bloqueos que dificultan las decisiones (miedo al fracaso, falta de confianza, pensamientos limitantes), para construir un proyecto con sentido."
+    ],
+    "highlight": "Mi trabajo se centra en una escucha empática, el respeto de su ritmo y una colaboración activa: definimos juntos objetivos y avanzamos paso a paso."
+  },
+  "services": {
+    "title": "Mis Servicios",
+    "subtitle": "Un acompañamiento a medida para cada etapa de su vida",
+    "learnMore": "Saber más",
+    "list": {
+      "individual": {
+        "title": "Terapia Individual",
+        "description": "Un acompañamiento personalizado para atravesar los momentos difíciles y recuperar su equilibrio emocional."
+      },
+      "couple": {
+        "title": "Terapia de Pareja",
+        "description": "Un espacio neutral y benevolente para mejorar la comunicación y fortalecer su relación."
+      },
+      "orientation": {
+        "title": "Orientación Escolar y Profesional",
+        "description": "Herramientas y acompañamiento para encontrar o redefinir su camino profesional."
+      },
+      "spanish": {
+        "title": "Consulta en Español",
+        "description": "Terapia en español para facilitar la expresión y la adaptación cultural."
+      }
+    }
+  },
+  "methodology": {
+    "title": "Mi Enfoque Integrativo",
+    "paragraph1": "Mi práctica se enmarca en un enfoque integrador: considero a la persona en su totalidad y, según cada situación, articuló las dimensiones emocional, cognitiva, conductual y corporal, teniendo en cuenta el contexto psicológico, social y biológico. En la práctica, esto significa que me apoyo en varios marcos de referencia (en particular el humanista, el psicodinámico, la TCC y la atención plena/mindfulness) para construir un acompañamiento coherente. El principio rector es simple: adaptar el proceso terapéutico a la persona y no al revés, dentro de un marco respetuoso, seguro y colaborativo. En mi trabajo, la TCC ocupa un lugar importante cuando se trata de identificar y flexibilizar aquello que bloquea el día a día: pensamientos automáticos, creencias limitantes, evitación, ansiedad, falta de confianza o dificultades de adaptación en periodos de transición. El objetivo es ayudarle a comprender mejor sus mecanismos, recuperar margen de elección y desarrollar estrategias más útiles.",
+    "paragraph2": "En cuanto a la orientación escolar y profesional, mi acompañamiento es psicológico (y se diferencia del asesoramiento de orientación y de los trámites administrativos). Se apoya en la teoría social cognitiva de la orientación, que pone el énfasis en la capacidad de cada persona para convertirse en protagonista de sus decisiones, al tiempo que tiene en cuenta las influencias personales y del entorno. Presto una atención particular al sentimiento de autoeficacia (Bandura), tema que he trabajado en relación con el abandono escolar: reforzar la confianza en las propias capacidades suele ser un factor clave para atreverse a elegir y comprometerse con un proyecto."
+  },
+  "footer": {
+    "contact": "Contacto",
+    "practicalInfo": "Información práctica",
+    "practicalText": "Consulta solo con cita previa",
+    "practicalNote": "Las sesiones pueden realizarse en francés o español según su preferencia.",
+    "followMe": "Sígueme",
+    "copyright": "Todos los derechos reservados",
+    "rppsLabel": "N° RPPS",
+    "siretLabel": "SIRET"
+  },
+  "serviceLayout": {
+    "benefitsTitle": "Los beneficios",
+    "ctaLabel": "Pedir cita"
+  },
+  "404": {
+    "title": "Página no encontrada",
+    "subtitle": "¡Ups! La página que busca no existe o ha sido movida.",
+    "description": "Parece que se ha perdido. No se preocupe, le pasa a todo el mundo.",
+    "backHome": "Volver al inicio",
+    "contact": "Contactarme"
+  },
+  "languagePicker": {
+    "label": "Cambiar idioma",
+    "current": "Idioma actual"
+  },
+  "pricing": {
+    "title": "Tarifas",
+    "subtitle": "Tarifas transparentes para un acompañamiento de calidad",
+    "duration": "Duración",
+    "price": "Tarifa",
+    "minutes": "min",
+    "sessionNote": "por sesión",
+    "services": {
+      "individual": {
+        "name": "Terapia Individual",
+        "description": "Acompañamiento personalizado para atravesar los momentos difíciles",
+        "duration": "50",
+        "price": "60",
+        "note": "Sesión de 50 minutos en un marco confidencial"
+      },
+      "couple": {
+        "name": "Terapia de Pareja",
+        "description": "Un espacio neutral para mejorar su relación",
+        "duration": "75",
+        "price": "90",
+        "note": "Sesión más larga para permitir la expresión de ambos"
+      },
+      "orientation": {
+        "name": "Balance de Orientación",
+        "description": "Acompañamiento para encontrar su camino profesional",
+        "duration": "90",
+        "price": "80",
+        "note": "Varias sesiones recomendadas para un balance completo"
+      },
+      "spanish": {
+        "name": "Consulta en Español",
+        "description": "Terapia en su lengua materna",
+        "duration": "50",
+        "price": "60",
+        "note": "Mismas modalidades que la terapia individual"
+      }
+    },
+    "payment": {
+      "title": "Modalidades de pago",
+      "methods": "Cheque, efectivo, transferencia bancaria",
+      "noCard": "Tarjeta bancaria no aceptada",
+      "receipt": "Se le entregará una factura a petición"
+    },
+    "reimbursement": {
+      "title": "Reembolso",
+      "text": "Las consultas de psicólogo no son reembolsadas por la Seguridad Social francesa. Sin embargo, algunos seguros complementarios ofrecen una cobertura parcial. Consulte con su seguro de salud.",
+      "mutuelle": "Recuerde verificar su contrato de seguro"
+    },
+    "cancellation": {
+      "title": "Cancelación",
+      "text": "Toda sesión no cancelada con 48h de antelación será debida."
+    },
+    "cta": {
+      "title": "¿Listo para empezar?",
+      "text": "Pida cita para una primera consulta",
+      "button": "Pedir cita"
+    }
+  }
+}

@@ -1,0 +1,263 @@
+---
+import BrandLogo from "../ui/BrandLogo.astro";
+import LanguagePicker from "./LanguagePicker.astro";
+import { type Locale, t, getLocalizedPath, getServicePath } from "../../i18n";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const homeHref = getLocalizedPath("/", lang);
+const aboutHref = getLocalizedPath("/#qui-suis-je", lang);
+const servicesHref = getLocalizedPath("/#services", lang);
+const pricingHref = getLocalizedPath('/tarifs', lang);
+const approachHref = getLocalizedPath("/#mon-approche", lang);
+const contactHref = getLocalizedPath("/#contact", lang);
+
+const servicesLinks = [
+  { 
+    name: t('services.list.individual.title', lang), 
+    href: getServicePath('therapie-individuelle', lang) 
+  },
+  { 
+    name: t('services.list.couple.title', lang), 
+    href: getServicePath('therapie-couple', lang) 
+  },
+  { 
+    name: t('services.list.orientation.title', lang), 
+    href: getServicePath('orientation', lang) 
+  },
+  { 
+    name: t('services.list.spanish.title', lang), 
+    href: getServicePath('espagnol', lang) 
+  },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+  <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8" aria-label={lang === 'fr' ? 'Navigation principale' : 'Navegación principal'}>
+    
+    <!-- LOGO -->
+    <div class="flex lg:flex-1">
+      <a href={homeHref} class="-m-1.5 p-1.5 flex items-center gap-3 group">
+        <BrandLogo
+          variant="nav"
+          alt={t('hero.logoAlt', lang)}
+          priority={true}
+          class="h-10 w-10 object-contain"
+        />
+        <span class="font-serif text-xl font-bold text-gray-800 transition-colors group-hover:text-rose-900">
+          Evelin Valcarce
+        </span>
+      </a>
+    </div>
+
+    <!-- LANGUAGE PICKER + HAMBURGER (Mobile) -->
+    <div class="flex items-center gap-4 lg:hidden">
+      <LanguagePicker lang={lang} />
+      <button 
+        id="mobile-menu-open" 
+        type="button" 
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors"
+        aria-label={t('nav.openMenu', lang)}
+      >
+        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- NAVIGATION DESKTOP -->
+    <div class="hidden lg:flex lg:gap-x-8 lg:items-center h-full">
+      <a href={homeHref} class="text-sm font-medium leading-6 text-gray-600 hover:text-rose-500 transition-colors">
+        {t('nav.home', lang)}
+      </a>
+      <a href={aboutHref} class="text-sm font-medium leading-6 text-gray-600 hover:text-rose-500 transition-colors">
+        {t('nav.about', lang)}
+      </a>
+      
+      <!-- DROPDOWN SERVICES (Desktop) -->
+      <div class="relative group h-full flex items-center">
+        <a href={servicesHref} class="flex items-center gap-x-1 text-sm font-medium leading-6 text-gray-600 group-hover:text-rose-500 transition-colors py-2">
+          {t('nav.services', lang)}
+          <svg class="h-4 w-4 flex-none text-gray-400 transition-transform duration-200 group-hover:rotate-180 group-hover:text-rose-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <div class="absolute left-1/2 -translate-x-1/2 top-full z-20 mt-0 w-64 rounded-2xl bg-white shadow-xl ring-1 ring-gray-900/5 transition-all 
+             duration-200 ease-out opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible delay-75">
+          <div class="absolute -top-6 left-0 w-full h-6 bg-transparent"></div>
+          <div class="p-2 overflow-hidden">
+            {servicesLinks.map((service) => (
+              <a href={service.href} 
+                class="block rounded-lg p-4 text-sm font-semibold leading-6 text-gray-900 hover:bg-rose-50 hover:text-rose-600 transition-colors">
+                {service.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <a href={approachHref} class="text-sm font-medium leading-6 text-gray-600 hover:text-rose-500 transition-colors">
+        {t('nav.approach', lang)}
+      </a>
+      <a href={pricingHref} class="text-sm font-medium leading-6 text-gray-600 hover:text-rose-500 transition-colors">
+        {t('nav.pricing', lang)}
+      </a>
+      <a href={contactHref} class="text-sm font-medium leading-6 text-gray-600 hover:text-rose-500 transition-colors">
+        {t('nav.contact', lang)}
+      </a>
+
+      <LanguagePicker lang={lang} class="ml-2" />
+
+      <button
+        type="button"
+        data-open-modal="appointment"
+        class="ml-4 rounded-full bg-rose-100 px-5 py-2.5 text-sm font-bold text-rose-900 transition-all hover:-translate-y-0.5 
+            hover:bg-rose-200 hover:text-rose-950"
+      >
+        {t('nav.cta', lang)}
+      </button>
+    </div>
+  </nav>
+
+  <!-- MENU MOBILE -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 w-full h-screen bg-white overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="sticky top-0 z-10 flex items-center justify-between px-6 py-6 bg-white border-b border-gray-100">
+      <a href={homeHref} class="-m-1.5 p-1.5 text-lg font-serif font-bold text-gray-900">
+        Evelin Valcarce
+      </a>
+      <button id="mobile-menu-close" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors">
+        <span class="sr-only">{t('nav.closeMenu', lang)}</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="mt-6 flow-root px-6 pb-24">
+      <div class="-my-6 divide-y divide-gray-500/10">
+        <div class="space-y-2 py-6">
+          <a href={homeHref} class="mobile-link -mx-3 block rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+            {t('nav.home', lang)}
+          </a>
+          <a href={aboutHref} class="mobile-link -mx-3 block rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+            {t('nav.about', lang)}
+          </a>
+          
+          <div class="-mx-3">
+            <button 
+              type="button" 
+              class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-xl font-semibold leading-7 text-gray-900 hover:bg-gray-50" 
+              aria-controls="mobile-services-list" 
+              aria-expanded="false"
+              id="mobile-services-btn"
+            >
+              {t('nav.services', lang)}
+              <svg id="mobile-chevron" class="h-5 w-5 flex-none text-gray-400 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            
+            <div class="hidden mt-2 space-y-2 pl-4 border-l-2 border-rose-100" id="mobile-services-list">
+              <a href={servicesHref} class="mobile-link block rounded-lg py-2 pl-3 pr-3 text-base font-semibold leading-7 text-rose-500 hover:bg-rose-50">
+                {t('nav.allServices', lang)}
+              </a>
+              {servicesLinks.map((service) => (
+                <a href={service.href} class="mobile-link block rounded-lg py-2 pl-3 pr-3 text-base font-semibold leading-7 text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                  {service.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <a href={approachHref} class="mobile-link -mx-3 block rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+            {t('nav.approach', lang)}
+          </a>
+          <a href={pricingHref} class="mobile-link -mx-3 block rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+            {t('nav.pricing', lang)}
+          </a>
+          <a href={contactHref} class="mobile-link -mx-3 block rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+            {t('nav.contact', lang)}
+          </a>
+        </div>
+        
+        <button
+          type="button"
+          data-open-modal="appointment"
+          class="mobile-link mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-rose-500 px-6 py-4 text-base font-semibold text-white 
+                shadow-lg transition-all hover:bg-rose-600 active:scale-[0.98]"
+        >
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {t('nav.cta', lang)}
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script is:inline type="module">
+  const menu = document.getElementById("mobile-menu");
+  const openBtn = document.getElementById("mobile-menu-open");
+  const closeBtn = document.getElementById("mobile-menu-close");
+  const servicesBtn = document.getElementById("mobile-services-btn");
+  const servicesList = document.getElementById("mobile-services-list");
+  const chevron = document.getElementById("mobile-chevron");
+
+  if (!menu || !openBtn || !closeBtn || !servicesBtn || !servicesList || !chevron) {
+    console.warn("[mobile-menu] éléments manquants dans le DOM");
+  } else {
+    const lockScroll = (locked) => {
+      const scrollbarCompensation = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.classList.toggle("overflow-hidden", locked);
+      document.body.classList.toggle("overflow-hidden", locked);
+      document.body.style.paddingRight = locked && scrollbarCompensation ? `${scrollbarCompensation}px` : "";
+    };
+
+  const setMenuOpen = (open) => {
+    if (!open) openBtn.focus(); // restaurer focus AVANT d'inert/hide pour corriger warning "Blocked aria-hidden on an element..." ainsi les lecteurs d'écran ne seront pas piégés
+
+    menu.classList.toggle("hidden", !open);
+    menu.toggleAttribute("inert", !open); // ou: menu.inert = !open;
+    menu.setAttribute("aria-hidden", String(!open));
+    openBtn.setAttribute("aria-expanded", String(open));
+
+    if (!open) setServicesOpen(false);
+    lockScroll(open);
+
+    if (open) closeBtn.focus();
+  };
+
+    const setServicesOpen = (open) => {
+      servicesList.classList.toggle("hidden", !open);
+      chevron.classList.toggle("rotate-180", open);
+      servicesBtn.setAttribute("aria-expanded", String(open));
+    };
+
+    const isServicesOpen = () => servicesBtn.getAttribute("aria-expanded") === "true";
+    const isMenuOpen = () => !menu.classList.contains("hidden");
+
+    openBtn.addEventListener("click", () => setMenuOpen(true));
+    closeBtn.addEventListener("click", () => setMenuOpen(false));
+    servicesBtn.addEventListener("click", () => setServicesOpen(!isServicesOpen()));
+
+    menu.addEventListener("click", (e) => {
+      const target = e.target instanceof Element ? e.target : null;
+      const link = target?.closest("a.mobile-link");
+      if (link) setMenuOpen(false);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isMenuOpen()) setMenuOpen(false);
+    });
+
+    menu.setAttribute("aria-hidden", "true");
+    openBtn.setAttribute("aria-expanded", "false");
+    servicesBtn.setAttribute("aria-expanded", "false");
+  }
+</script>

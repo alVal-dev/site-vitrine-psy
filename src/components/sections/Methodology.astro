@@ -1,0 +1,25 @@
+---
+import { type Locale, t } from "../../i18n";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<section id="mon-approche" aria-labelledby="approche-title" class="bg-linear-to-br from-rose-50 to-pink-50 py-24">
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+    <h2 id="approche-title" class="mb-8 font-serif text-4xl text-gray-800 md:text-5xl">
+      {t('methodology.title', lang)}
+    </h2>
+    <div class="mx-auto max-w-3xl space-y-6 text-gray-600 text-justify">
+      <p class="text-lg leading-relaxed">
+        {t('methodology.paragraph1', lang)}
+      </p>
+      <p class="text-lg leading-relaxed">
+        {t('methodology.paragraph2', lang)}
+      </p>
+    </div>
+  </div>
+</section>

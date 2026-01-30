@@ -1,0 +1,292 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { type Locale, getLocalizedPath } from '../../i18n';
+
+const lang: Locale = 'es';
+const contactHref = getLocalizedPath('/#accueil', lang);
+
+// Informations à personnaliser
+const siteInfo = {
+  siteName: "evelinvalcarce-psy.fr",
+  siteUrl: "https://evelinvalcarce-psy.fr",
+  
+  editorName: "Evelin Valcarce",
+  editorStatus: "Psicóloga liberal",
+  editorAddress: "123 Rue Exemple, 33500 Libourne, Francia",
+  editorPhone: "+33 7 XX XX XX XX",
+  editorEmail: "contact@evelinvalcarce.fr",
+  
+  siret: "XXX XXX XXX XXXXX",
+  rpps: "10009480426",
+  
+  publicationDirector: "Evelin Valcarce",
+  
+  hostName: "Vercel Inc.",
+  hostAddress: "440 N Barranca Ave #4133, Covina, CA 91723, USA",
+  hostWebsite: "https://vercel.com",
+  
+  photoCredits: "Unsplash, Fotos personales",
+  
+  lastUpdate: "Enero 2025",
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  title="Menciones Legales | Evelin Valcarce"
+  description="Menciones legales del sitio evelinvalcarce.fr - Psicóloga clínica en Libourne, Francia"
+>
+  <article class="pt-28 pb-16">
+    <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+      
+      <h1 class="mb-8 font-serif text-4xl text-gray-800 sm:text-5xl">
+        Menciones Legales
+      </h1>
+      
+      <p class="mb-12 text-gray-600">
+        De conformidad con las disposiciones de los artículos 6-III y 19 de la Ley n°2004-575 
+        del 21 de junio de 2004 para la Confianza en la Economía Digital (LCEN), se ponen en 
+        conocimiento de los usuarios y visitantes del sitio las presentes menciones legales.
+      </p>
+
+      <!-- Editor del sitio -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">1. Editor del sitio</h2>
+        <div class="rounded-lg bg-gray-50 p-6 text-gray-700">
+          <p><strong>Nombre:</strong> {siteInfo.editorName}</p>
+          <p><strong>Estatus:</strong> {siteInfo.editorStatus}</p>
+          <p><strong>Dirección:</strong> {siteInfo.editorAddress}</p>
+          <p><strong>Teléfono:</strong> {siteInfo.editorPhone}</p>
+          <p><strong>Email:</strong> <a href={`mailto:${siteInfo.editorEmail}`} class="text-rose-600 hover:underline">{siteInfo.editorEmail}</a></p>
+          <p class="mt-4"><strong>N° SIRET:</strong> {siteInfo.siret}</p>
+          <p><strong>N° RPPS:</strong> {siteInfo.rpps}</p>
+        </div>
+      </section>
+
+      <!-- Director de publicación -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">2. Director de publicación</h2>
+        <p class="text-gray-700">
+          El director de publicación es <strong>{siteInfo.publicationDirector}</strong>.
+        </p>
+      </section>
+
+      <!-- Alojamiento -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">3. Alojamiento</h2>
+        <div class="rounded-lg bg-gray-50 p-6 text-gray-700">
+          <p><strong>Razón social:</strong> {siteInfo.hostName}</p>
+          <p><strong>Dirección:</strong> {siteInfo.hostAddress}</p>
+          <p><strong>Sitio web:</strong> 
+            <a href={siteInfo.hostWebsite} target="_blank" rel="noopener noreferrer" class="text-rose-600 hover:underline">
+              {siteInfo.hostWebsite}
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Propiedad intelectual -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">4. Propiedad intelectual</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>
+            Todo el contenido de este sitio (textos, imágenes, videos, logotipos, iconos, sonidos, 
+            software, etc.) es propiedad exclusiva de {siteInfo.editorName}, con excepción de las 
+            marcas, logotipos o contenidos pertenecientes a otras empresas asociadas o autores.
+          </p>
+          <p>
+            Cualquier reproducción, representación, modificación, publicación, adaptación de todo 
+            o parte de los elementos del sitio, cualquiera que sea el medio o procedimiento utilizado, 
+            está prohibida, salvo autorización escrita previa de {siteInfo.editorName}.
+          </p>
+          <p>
+            Cualquier explotación no autorizada del sitio o de cualquiera de los elementos que 
+            contiene será considerada como constitutiva de falsificación y perseguida de conformidad 
+            con las disposiciones del Código de Propiedad Intelectual.
+          </p>
+        </div>
+      </section>
+
+      <!-- Protección de datos personales (RGPD) -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">5. Protección de datos personales</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>
+            De conformidad con el Reglamento General de Protección de Datos (RGPD) del 27 de abril 
+            de 2016 (Reglamento UE 2016/679) y la ley francesa "Informatique et Libertés" del 6 de 
+            enero de 1978 modificada, usted dispone de derechos sobre sus datos personales.
+          </p>
+          
+          <h3 class="font-semibold text-gray-800 mt-6">5.1 Responsable del tratamiento</h3>
+          <p>
+            El responsable del tratamiento de datos personales es {siteInfo.editorName}, 
+            contactable en la dirección email: <a href={`mailto:${siteInfo.editorEmail}`} class="text-rose-600 hover:underline">{siteInfo.editorEmail}</a>
+          </p>
+          
+          <h3 class="font-semibold text-gray-800 mt-6">5.2 Datos recopilados</h3>
+          <p>Los datos personales recopilados en este sitio pueden incluir:</p>
+          <ul class="list-disc list-inside ml-4 space-y-1">
+            <li>Nombre y apellidos</li>
+            <li>Dirección de correo electrónico</li>
+            <li>Número de teléfono</li>
+            <li>Cualquier información transmitida voluntariamente a través del formulario de contacto</li>
+          </ul>
+          
+          <h3 class="font-semibold text-gray-800 mt-6">5.3 Finalidad del tratamiento</h3>
+          <p>Los datos recopilados se utilizan para:</p>
+          <ul class="list-disc list-inside ml-4 space-y-1">
+            <li>Responder a sus solicitudes de contacto o cita</li>
+            <li>Asegurar el seguimiento de la relación paciente-profesional</li>
+            <li>Mejorar nuestros servicios</li>
+          </ul>
+          
+          <h3 class="font-semibold text-gray-800 mt-6">5.4 Duración de conservación</h3>
+          <p>
+            Los datos personales se conservan durante el tiempo necesario para el cumplimiento 
+            de las finalidades mencionadas anteriormente, y de conformidad con las obligaciones 
+            legales aplicables a los profesionales de la salud (conservación del expediente del 
+            paciente: 20 años desde la última consulta).
+          </p>
+          
+          <h3 class="font-semibold text-gray-800 mt-6">5.5 Sus derechos</h3>
+          <p>De conformidad con la normativa vigente, usted dispone de los siguientes derechos:</p>
+          <ul class="list-disc list-inside ml-4 space-y-1">
+            <li><strong>Derecho de acceso:</strong> obtener confirmación de que se tratan datos que le conciernen y obtener una copia</li>
+            <li><strong>Derecho de rectificación:</strong> solicitar la corrección de datos inexactos</li>
+            <li><strong>Derecho de supresión:</strong> solicitar la eliminación de sus datos en las condiciones previstas por la ley</li>
+            <li><strong>Derecho a la limitación:</strong> solicitar la limitación del tratamiento de sus datos</li>
+            <li><strong>Derecho a la portabilidad:</strong> recibir sus datos en un formato estructurado</li>
+            <li><strong>Derecho de oposición:</strong> oponerse al tratamiento de sus datos</li>
+          </ul>
+          <p class="mt-4">
+            Para ejercer estos derechos, puede contactarnos en: 
+            <a href={`mailto:${siteInfo.editorEmail}`} class="text-rose-600 hover:underline">{siteInfo.editorEmail}</a>
+          </p>
+          <p class="mt-2">
+            En caso de litigio, puede presentar una reclamación ante la CNIL 
+            (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-rose-600 hover:underline">www.cnil.fr</a>).
+          </p>
+        </div>
+      </section>
+
+      <!-- Cookies -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">6. Cookies</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>
+            Este sitio utiliza cookies para mejorar la experiencia del usuario y realizar 
+            estadísticas de visitas.
+          </p>
+          
+          <h3 class="font-semibold text-gray-800 mt-6">6.1 ¿Qué es una cookie?</h3>
+          <p>
+            Una cookie es un pequeño archivo de texto depositado en su terminal (ordenador, tableta, 
+            smartphone) al visitar un sitio web. Permite al sitio recordar información sobre su visita.
+          </p>
+          
+          <h3 class="font-semibold text-gray-800 mt-6">6.2 Tipos de cookies utilizadas</h3>
+          <ul class="list-disc list-inside ml-4 space-y-1">
+            <li><strong>Cookies estrictamente necesarias:</strong> esenciales para el funcionamiento del sitio</li>
+            <li><strong>Cookies analíticas:</strong> permiten comprender el uso del sitio (si aplica)</li>
+          </ul>
+          
+          <h3 class="font-semibold text-gray-800 mt-6">6.3 Gestión de cookies</h3>
+          <p>
+            Puede modificar en cualquier momento sus preferencias de cookies a través de los 
+            parámetros de su navegador. La desactivación de ciertas cookies puede afectar su 
+            experiencia de navegación.
+          </p>
+        </div>
+      </section>
+
+      <!-- Limitación de responsabilidad -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">7. Limitación de responsabilidad</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>
+            La información contenida en este sitio es lo más precisa posible y el sitio se 
+            actualiza periódicamente, pero puede contener inexactitudes, omisiones o lagunas.
+          </p>
+          <p>
+            {siteInfo.editorName} no será responsable de los daños directos o indirectos 
+            resultantes del acceso o uso del sitio, incluyendo la inaccesibilidad, pérdidas 
+            de datos, deterioros, destrucciones o virus que puedan afectar el equipo informático 
+            del usuario.
+          </p>
+          <p>
+            La información presente en este sitio no constituye un consejo médico y no reemplaza 
+            en ningún caso una consulta con un profesional de la salud.
+          </p>
+        </div>
+      </section>
+
+      <!-- Enlaces hipertexto -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">8. Enlaces hipertexto</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>
+            Este sitio puede contener enlaces hipertexto hacia otros sitios. {siteInfo.editorName} 
+            no ejerce ningún control sobre estos sitios y declina toda responsabilidad en cuanto 
+            a su contenido o los posibles daños resultantes de su uso.
+          </p>
+          <p>
+            La creación de enlaces hipertexto hacia este sitio está sujeta a la aprobación previa 
+            del director de publicación.
+          </p>
+        </div>
+      </section>
+
+      <!-- Secreto profesional -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">9. Secreto profesional</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>
+            Como psicóloga, {siteInfo.editorName} está sujeta al secreto profesional de 
+            conformidad con el artículo 226-13 del Código Penal francés y el Código Deontológico 
+            de los Psicólogos.
+          </p>
+          <p>
+            Toda la información intercambiada en el marco de la relación terapéutica es 
+            estrictamente confidencial.
+          </p>
+        </div>
+      </section>
+
+      <!-- Créditos -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">10. Créditos</h2>
+        <div class="rounded-lg bg-gray-50 p-6 text-gray-700">
+          <p><strong>Créditos de fotos:</strong> {siteInfo.photoCredits}</p>
+        </div>
+      </section>
+
+      <!-- Derecho aplicable -->
+      <section class="mb-10">
+        <h2 class="mb-4 font-serif text-2xl text-gray-800">11. Derecho aplicable</h2>
+        <p class="text-gray-700">
+          Las presentes menciones legales se rigen por el derecho francés. En caso de litigio, 
+          y después de intentar una solución amistosa, los tribunales franceses serán los únicos 
+          competentes.
+        </p>
+      </section>
+
+      <!-- Actualización -->
+      <section class="mb-10 pt-8 border-t border-gray-200">
+        <p class="text-sm text-gray-500">
+          Última actualización: {siteInfo.lastUpdate}
+        </p>
+      </section>
+
+      <!-- Retour -->
+      <div class="mt-12">
+        <a href={contactHref} class="inline-flex items-center text-rose-600 hover:text-rose-700 font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 19-7-7 7-7"/>
+            <path d="M19 12H5"/>
+          </svg>
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

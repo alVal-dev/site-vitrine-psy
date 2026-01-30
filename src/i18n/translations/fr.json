@@ -1,0 +1,147 @@
+{
+  "site": {
+    "title": "Evelin Valcarce - Psychologue Clinicienne à Libourne",
+    "description": "Psychologue clinicienne et psychologue de l'orientation à Libourne. Accompagnement personnalisé en français et espagnol pour adolescents, adultes, couples et orientation professionnelle.",
+    "keywords": "psychologue, Libourne, thérapie, couple, orientation professionnelle, espagnol, clinicienne"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "Qui suis-je",
+    "services": "Mes Services",
+    "pricing": "Tarifs",
+    "approach": "Mon approche",
+    "contact": "Contact",
+    "cta": "Me contacter",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "allServices": "→ Voir tous les services"
+  },
+  "hero": {
+    "title": "Psychologue Clinicienne &",
+    "titleHighlight": "Psychologue de l'Orientation",
+    "subtitle": "Un espace d'écoute bienveillant pour retrouver votre équilibre personnel et professionnel.",
+    "cta": "Découvrir mes services",
+    "logoAlt": "Logo du cabinet Evelin Valcarce"
+  },
+  "about": {
+    "title": "Qui suis-je ?",
+    "portraitAlt": "Portrait d'Evelin Valcarce, psychologue clinicienne",
+    "paragraphs": [
+      "Psychologue clinicienne, j’accompagne depuis plus de 13 ans des adolescents, adultes et personnes âgées confrontés à des périodes de difficulté ou de transition (anxiété, stress, épuisement, baisse d’estime de soi, difficultés relationnelles, deuil, changements de vie…).",
+      "Ma pratique s’appuie sur une approche intégrative : je prends en compte la personne dans sa globalité et j’articule, selon vos besoins, les dimensions émotionnelle, cognitive et comportementale (et le contexte de vie). Je m’appuie notamment sur une posture humaniste et sur des outils issus des TCC, de l’approche psychodynamique et de la pleine conscience, afin de proposer un suivi à la fois personnalisé et structuré, dans un cadre confidentiel et respectueux.",
+      "Je propose également un accompagnement en orientation scolaire et professionnelle (démarche psychologique). Il ne s’agit pas de conseil administratif ni d’un bilan de compétences : l’objectif est de travailler sur la connaissance de soi (valeurs, intérêts, fonctionnement), et sur les blocages qui freinent les choix (peur de l’échec, manque de confiance, pensées limitantes), pour construire un projet qui ait du sens."
+    ],
+    "highlight": "Mon travail est centré sur une écoute empathique, le respect de votre rythme et une collaboration active : nous définissons ensemble des objectifs et avançons pas à pas."
+  },
+  "services": {
+    "title": "Mes Services",
+    "subtitle": "Un accompagnement sur mesure pour chaque étape de votre vie",
+    "learnMore": "En savoir plus",
+    "list": {
+      "individual": {
+        "title": "Thérapie Individuelle",
+        "description": "Un suivi confidentiel pour traverser une période difficile, mieux comprendre ce que vous vivez et avancer à votre rythme."
+      },
+      "couple": {
+        "title": "Thérapie de Couple",
+        "description": "Un cadre impartial pour apaiser les échanges, comprendre vos dynamiques relationnelles et retrouver un dialogue plus constructif."
+      },
+      "orientation": {
+        "title": "Orientation Scolaire et Professionnelle",
+        "description": "Un accompagnement psychologique (hors démarches administratives et bilan de compétences) pour clarifier vos choix et lever les blocages."
+      },
+      "spanish": {
+        "title": "Consultation en Espagnol",
+        "description": "Thérapie en espagnol pour s’exprimer avec plus d’aisance et bénéficier d’une approche sensible aux enjeux interculturels."
+      }
+    }
+  },
+  "methodology": {
+    "title": "Mon Approche",
+    "paragraph1": "Ma pratique s’inscrit dans une approche intégrative : je considère la personne dans sa globalité et j’articule, selon les situations, les dimensions émotionnelle, cognitive, comportementale et corporelle, tout en tenant compte du contexte psychologique, social et biologique. Concrètement, cela signifie que je m’appuie sur plusieurs références (notamment humaniste, psychodynamique, TCC et pleine conscience) pour construire un accompagnement cohérent. Le principe directeur est simple : adapter le processus thérapeutique à la personne, et non l’inverse, dans un cadre respectueux, sécurisé et collaboratif. Dans mon travail, les TCC occupent une place importante lorsqu’il s’agit de repérer et d’assouplir ce qui bloque au quotidien : pensées automatiques, croyances limitantes, évitements, anxiété, manque de confiance ou difficultés d’adaptation lors de périodes de transition. L’objectif est de vous aider à mieux comprendre vos mécanismes, retrouver de la marge de choix, et développer des stratégies plus aidantes.",
+    "paragraph2": "Pour l’orientation scolaire et professionnelle, mon accompagnement est psychologique (et se distingue du conseil d’orientation et des démarches administratives). Il s’appuie sur la théorie sociale cognitive de l’orientation, qui met l’accent sur la capacité de chacun à devenir acteur de ses choix, tout en prenant en compte les influences personnelles et environnementales. Je porte une attention particulière au sentiment d’efficacité personnelle (Bandura), thème sur lequel j’ai travaillé en lien avec le décrochage scolaire : renforcer la confiance dans ses capacités est souvent un levier central pour oser choisir et s’engager dans un projet."
+  },
+  "footer": {
+    "contact": "Contact",
+    "practicalInfo": "Informations pratiques",
+    "practicalText": "Consultation uniquement sur rendez-vous",
+    "practicalNote": "Les séances peuvent se dérouler en français ou en espagnol selon votre préférence.",
+    "followMe": "Suivez-moi",
+    "copyright": "Tous droits réservés",
+    "rppsLabel": "N° RPPS",
+    "siretLabel": "SIRET"
+  },
+  "serviceLayout": {
+    "benefitsTitle": "Les bénéfices",
+    "ctaLabel": "Me contacter"
+  },
+  "404": {
+    "title": "Page non trouvée",
+    "subtitle": "Oups ! La page que vous recherchez n'existe pas ou a été déplacée.",
+    "description": "Il semble que vous vous soyez égaré. Pas d'inquiétude, cela arrive à tout le monde.",
+    "backHome": "Retour à l'accueil",
+    "contact": "Me contacter"
+  },
+  "languagePicker": {
+    "label": "Changer de langue",
+    "current": "Langue actuelle"
+  },
+   "pricing": {
+    "title": "Tarifs",
+    "subtitle": "Des tarifs transparents pour un accompagnement de qualité",
+    "duration": "Durée",
+    "price": "Tarif",
+    "minutes": "min",
+    "sessionNote": "par séance",
+    "services": {
+      "individual": {
+        "name": "Thérapie Individuelle",
+        "description": "Accompagnement personnalisé pour traverser les moments difficiles",
+        "duration": "50",
+        "price": "60",
+        "note": "Séance de 50 minutes dans un cadre confidentiel"
+      },
+      "couple": {
+        "name": "Thérapie de Couple",
+        "description": "Un espace neutre pour améliorer votre relation",
+        "duration": "75",
+        "price": "90",
+        "note": "Séance plus longue pour permettre l'expression des deux partenaires"
+      },
+      "orientation": {
+        "name": "Bilan d'Orientation",
+        "description": "Accompagnement pour trouver votre voie professionnelle",
+        "duration": "90",
+        "price": "80",
+        "note": "Plusieurs séances recommandées pour un bilan complet"
+      },
+      "spanish": {
+        "name": "Consultation en Espagnol",
+        "description": "Thérapie dans votre langue maternelle",
+        "duration": "50",
+        "price": "60",
+        "note": "Mêmes modalités que la thérapie individuelle"
+      }
+    },
+    "payment": {
+      "title": "Modalités de paiement",
+      "methods": "Chèque, espèces, virement bancaire",
+      "noCard": "Carte bancaire non acceptée",
+      "receipt": "Une facture vous sera remise sur demande"
+    },
+    "reimbursement": {
+      "title": "Remboursement",
+      "text": "Les consultations de psychologue ne sont pas remboursées par la Sécurité sociale. Cependant, certaines mutuelles proposent une prise en charge partielle. Renseignez-vous auprès de votre complémentaire santé.",
+      "mutuelle": "Pensez à vérifier votre contrat de mutuelle"
+    },
+    "cancellation": {
+      "title": "Annulation",
+      "text": "Toute séance non annulée 48h à l'avance sera due."
+    },
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "text": "Prenez rendez-vous pour une première consultation",
+      "button": "Prendre rendez-vous"
+    }
+  }
+}

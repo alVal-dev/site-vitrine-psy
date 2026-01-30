@@ -1,0 +1,54 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { locales, defaultLocale, type Locale } from '../../../i18n';
+
+export async function getStaticPaths() {
+  const allServices = await getCollection('services');
+  
+  const paths: {
+    params: { lang: Locale; slug: string };
+    props: { service: CollectionEntry<'services'> };
+  }[] = [];
+  
+  for (const locale of locales) {
+    if (locale === defaultLocale) continue;
+    
+    const services = allServices.filter((s: CollectionEntry<'services'>) => s.data.lang === locale);
+    
+    for (const service of services) {
+      paths.push({
+        params: { lang: locale, slug: service.data.serviceSlug },
+        props: { service },
+      });
+    }
+  }
+  
+  return paths;
+}
+
+interface Props {
+  service: CollectionEntry<'services'>;
+}
+
+const { service } = Astro.props;
+const { data } = service;
+
+const heroImage = data.hero ? {
+  image: data.hero.image,
+  alt: data.hero.alt,
+} : undefined;
+---
+
+<ServiceLayout
+  title={data.title}
+  description={data.description}
+  lang={data.lang as Locale}
+  hero={heroImage}
+  lead={data.lead}
+  sections={data.sections}
+  benefitsTitle={data.benefitsTitle}
+  benefits={data.benefits}
+  aside={data.aside}
+  cta={data.cta}
+/>

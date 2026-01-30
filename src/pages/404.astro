@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { defaultLocale, t, getLocalizedPath } from '../i18n';
+
+const lang = defaultLocale;
+const homeHref = getLocalizedPath('/', lang);
+const contactHref = getLocalizedPath('/#contact', lang);
+---
+
+<BaseLayout 
+  lang={lang} 
+  title={`${t('404.title', lang)} | Evelin Valcarce`}
+  noindex={true}
+>
+  <section class="relative flex min-h-[80svh] items-center justify-center overflow-hidden bg-rose-50/30 pt-20">
+    <!-- Background decorations -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+      <div class="absolute -left-20 -top-20 h-96 w-96 rounded-full bg-rose-200/40 mix-blend-multiply opacity-60 blur-[100px]"></div>
+      <div class="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-pink-100/40 mix-blend-multiply opacity-60 blur-[100px]"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-2xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <!-- 404 Number -->
+      <p class="mb-4 font-serif text-8xl font-bold text-rose-300/80 sm:text-9xl" aria-hidden="true">
+        404
+      </p>
+
+      <!-- Title -->
+      <h1 class="mb-4 font-serif text-3xl text-gray-800 sm:text-4xl md:text-5xl">
+        {t('404.title', lang)}
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mb-6 text-xl text-gray-600">
+        {t('404.subtitle', lang)}
+      </p>
+
+      <!-- Description -->
+      <p class="mb-10 text-lg text-gray-500">
+        {t('404.description', lang)}
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href={homeHref}
+          class="inline-flex items-center justify-center rounded-full bg-rose-400 px-8 py-4 font-medium text-white shadow-lg transition hover:-translate-y-1 
+              hover:bg-rose-500 hover:shadow-rose-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 focus-visible:ring-offset-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          {t('404.backHome', lang)}
+        </a>
+
+        <a
+          href={contactHref}
+          class="inline-flex items-center justify-center rounded-full border-2 border-rose-300 bg-white px-8 py-4 font-medium text-rose-600 
+                transition hover:-translate-y-1 hover:border-rose-400 hover:bg-rose-50 focus-visible:outline-none focus-visible:ring-2 
+                focus-visible:ring-rose-400 focus-visible:ring-offset-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          {t('404.contact', lang)}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

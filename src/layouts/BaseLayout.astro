@@ -1,0 +1,129 @@
+---
+import Navbar from "../components/common/Navbar.astro";
+import Footer from "../components/common/Footer.astro";
+import AppointmentModal from "../components/ui/AppointmentModal.astro";
+import "../styles/global.css";
+import { 
+  defaultLocale, 
+  locales, 
+  type Locale, 
+  t, 
+  getAlternateUrl,
+} from "../i18n";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  lang?: Locale;
+  canonicalPath?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const { 
+  title,
+  description,
+  lang = defaultLocale,
+  canonicalPath,
+  ogImage = "/og-image.jpg",
+  noindex = false,
+} = Astro.props;
+
+const siteTitle = title || t('site.title', lang);
+const siteDescription = description || t('site.description', lang);
+const siteKeywords = t('site.keywords', lang);
+
+const currentPath = canonicalPath || Astro.url.pathname;
+const siteUrl = Astro.site?.origin || 'https://evelinvalcarce-psy.fr';
+const canonicalUrl = `${siteUrl}${currentPath}`;
+
+// Générer les URLs alternatives pour hreflang
+const alternateUrls = locales.map((locale) => ({
+  locale,
+  url: `${siteUrl}${getAlternateUrl(currentPath, locale)}`,
+}));
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- SEO Primary -->
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
+    <meta name="keywords" content={siteKeywords} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href={canonicalUrl} />
+    {alternateUrls.map(({ locale, url }) => (
+      <link rel="alternate" hreflang={locale} href={url} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'es_ES'} />
+    {locales.filter(l => l !== lang).map((locale) => (
+      <meta property="og:locale:alternate" content={locale === 'fr' ? 'fr_FR' : 'es_ES'} />
+    ))}
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+    
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "PsychologicalTreatment",
+      "name": "Evelin Valcarce - Psychologue",
+      "description": siteDescription,
+      "url": siteUrl,
+      "telephone": "+33700000000",
+      "email": "contact@evelinvalcarce.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Libourne",
+        "addressCountry": "FR"
+      },
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 09:00-19:00",
+      "availableLanguage": ["French", "Spanish"],
+      "areaServed": {
+        "@type": "City",
+        "name": "Libourne"
+      }
+    })} />
+  </head>
+  <body>
+    <Navbar lang={lang} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <AppointmentModal lang={lang} />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
